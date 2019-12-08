@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Math Sunlight Hours Project</title>
+    <style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(45deg, hsla(0, 0%, 20%, 0.5) 0%, hsla(0, 0%, 20%, 0.5) 10%, hsla(0, 0%, 40%, 0.5) 10%, hsla(0, 0%, 40%, 0.5) 20%, hsla(0, 0%, 20%, 0.5) 20%, hsla(0, 0%, 20%, 0.5) 30%, hsla(0, 0%, 40%, 0.5) 30%, hsla(0, 0%, 40%, 0.5) 40%, hsla(0, 0%, 20%, 0.5) 40%, hsla(0, 0%, 20%, 0.5) 50%, hsla(0, 0%, 40%, 0.5) 50%, hsla(0, 0%, 40%, 0.5) 60%, hsla(0, 0%, 20%, 0.5) 60%, hsla(0, 0%, 20%, 0.5) 70%, hsla(0, 0%, 40%, 0.5) 70%, hsla(0, 0%, 40%, 0.5) 80%, hsla(0, 0%, 20%, 0.5) 80%, hsla(0, 0%, 20%, 0.5) 90%, hsla(0, 0%, 40%, 0.5) 90%, hsla(0, 0%, 40%, 0.5) 100%), linear-gradient(-45deg, hsla(0, 0%, 20%, 0.5) 0%, hsla(0, 0%, 20%, 0.5) 10%, hsla(0, 0%, 40%, 0.5) 10%, hsla(0, 0%, 40%, 0.5) 20%, hsla(0, 0%, 20%, 0.5) 20%, hsla(0, 0%, 20%, 0.5) 30%, hsla(0, 0%, 40%, 0.5) 30%, hsla(0, 0%, 40%, 0.5) 40%, hsla(0, 0%, 20%, 0.5) 40%, hsla(0, 0%, 20%, 0.5) 50%, hsla(0, 0%, 40%, 0.5) 50%, hsla(0, 0%, 40%, 0.5) 60%, hsla(0, 0%, 20%, 0.5) 60%, hsla(0, 0%, 20%, 0.5) 70%, hsla(0, 0%, 40%, 0.5) 70%, hsla(0, 0%, 40%, 0.5) 80%, hsla(0, 0%, 20%, 0.5) 80%, hsla(0, 0%, 20%, 0.5) 90%, hsla(0, 0%, 40%, 0.5) 90%, hsla(0, 0%, 40%, 0.5) 100%);
+}
+header {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  background-color: hsl(0, 0%, 20%);
+  margin: 1em;
+  border: 0.5em solid hsl(196, 60%, 50%);
+}
+header div {
+  color: hsl(196, 60%, 50%);
+}
+header div h1 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 3em;
+  text-shadow: 1px 1px black;
+  padding: 0.25em;
+  transition: text-shadow 600ms ease-in-out, color 400ms linear;
+  border: none;
+}
+header div h1:hover {
+  color: hsl(196, 60%, 40%);
+  text-shadow: 1px 1px white, 2px 2px white, 3px 3px hsl(0, 0%, 95%), 4px 4px hsl(0, 0%, 90%), 5px 5px hsl(0, 0%, 85%), 6px 6px hsl(0, 0%, 80%), 7px 7px hsl(0, 0%, 75%), 8px 8px hsl(0, 0%, 70%), 9px 9px hsl(0, 0%, 65%), 10px 10px hsl(0, 0%, 60%);
+}
+header div img {
+  width: 600px;
+  height: auto;
+  margin: 2em auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header div p {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 0.5em;
+  font-weight: 600;
+}
+header div:nth-child(1) {
+  border-right: 1em double hsl(0, 0%, 40%);
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  background-color: hsl(0, 0%, 40%);
+  margin: 1em;
+  border: 0.5em solid hsl(196, 60%, 50%);
+}
+main section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+main section table {
+  text-align: center;
+  border-spacing: 0;
+  border: 2px solid hsl(196, 60%, 50%);
+  margin: 2em 1em;
+}
+main section table thead {
+  background-color: white;
+}
+main section table thead tr th {
+  color: hsl(196, 60%, 40%);
+  padding: 0.25em;
+  border: none;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+main section table thead tr th:nth-child(1) {
+  border-right: 2px solid hsl(196, 60%, 50%);
+}
+main section table tbody tr {
+  background-color: hsl(0, 0%, 20%);
+}
+main section table tbody tr td {
+  color: white;
+  padding: 0.25em;
+  border: none;
+  font-size: 1.2em;
+}
+main section table tbody tr td:nth-child(1) {
+  border-right: 2px solid hsl(196, 60%, 50%);
+}
+main section table tbody tr:nth-child(even) {
+  background-color: white;
+}
+main section table tbody tr:nth-child(even) td {
+  color: hsl(0, 0%, 20%);
+}
+main section div h2 {
+  color: hsl(196, 60%, 50%);
+  text-decoration: underline;
+  text-decoration-color: black;
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+main section div p {
+  font-size: 2em;
+  padding: 2em 1em;
+  background-color: white;
+  color: hsl(0, 0%, 20%);
+  text-align: center;
+}
+main section iframe {
+  width: 600px;
+  height: 600px;
+  border: 2px solid hsl(196, 60%, 50%);
+  margin: 2em 1em;
+}
+main section:nth-child(1) {
+  border-right: 1em double hsl(0, 0%, 20%);
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Tiwi Islands</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Tiwi_Islands.png" alt="Tiwi Islands, Australia">
+        <p>Northern Territory of Australia</p>
+      </div>
+      <div>
+        <h1>Kansas City</h1>
+        <img src="https://pbs.twimg.com/media/D-AMwcNWkAUmBuD.jpg" alt="Kansas City, MO">
+        <p>Largest City in Missouri</p>
+      </div>
+    </header>
+    <main>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>Months (Numeric)</th>
+              <th>Daylight (Hours)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>12.50</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>12.38</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>12.20</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>11.58</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>11.40</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>11.26</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>11.24</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>11.34</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>11.51</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>12.11</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>12.32</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>12.47</td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <h2>Equation</h2>
+          <p>y=5/8<i>cos</i>(1/2&#183;x)+11.9{1&lt;x&lt;12}</p>
+        </div>
+        <iframe src="https://www.desmos.com/calculator/hve3sjwsj8?embed"></iframe>
+      </section>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>Months (Numeric)</th>
+              <th>Daylight (Hours)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>9.28</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>10.12</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>11.17</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>12.36</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>13.48</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>14.42</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>14.53</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>14.13</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>13.05</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>11.50</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>10.34</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>9.39</td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <h2>Equation</h2>
+          <p>y=3<i>sin</i>(1/2&#183;x-1.7)+12{1&lt;x&lt;12}</p>
+        </div>
+        <iframe src="https://www.desmos.com/calculator/90dh6w6mc5?embed"></iframe>
+      </section>
+    </main>
+  </body>
+</html>
